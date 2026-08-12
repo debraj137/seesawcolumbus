@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import { restaurantSlug } from "./restaurants";
-
+import { blogPosts } from "./blog";
 type Restaurant = {
   rank: number;
   name: string;
@@ -74,6 +74,101 @@ export default function Home() {
         <div className="restaurant-image"><Image src="/images/columbus-dining-mosaic.png" alt="" fill sizes="(max-width: 700px) 100vw, 50vw" style={{ objectPosition: restaurant.position }} /><span className="rank">{String(restaurant.rank).padStart(2, "0")}</span><span className="price">{restaurant.price}</span></div>
         <div className="restaurant-body"><div className="restaurant-heading"><div><p>{restaurant.cuisine} · {restaurant.area}</p><h3>{restaurant.name}</h3></div><div className="rating">★ {restaurant.rating}<small>Google · {restaurant.reviews}</small></div></div><p className="description">{restaurant.description}</p><div className="details"><span>◷ {restaurant.hours}</span><span>Menu: {restaurant.menu.join(" · ")}</span></div></div>
       </article></Link>)}</div>
+    </section>
+    <section id="journal" className="journal">
+
+      <header className="journal-header">
+
+        <div>
+
+          <div className="eyebrow">
+            <span />
+            The journal
+          </div>
+
+          <h2>
+            Stories worth
+            <br />
+            <em>saving a table for.</em>
+          </h2>
+
+        </div>
+
+        <p>
+          Local dining guides, neighborhood notes, and practical ideas
+          for eating your way through Columbus.
+        </p>
+
+      </header>
+
+
+      <div className="blog-grid">
+
+        {blogPosts.map((post) => (
+
+          <Link
+            href={`/blog/${post.slug}`}
+            className="blog-card"
+            key={post.slug}
+          >
+
+            <article>
+
+              {/* Featured Image */}
+
+              <div className="blog-card-image">
+
+                <Image
+                  src={post.featuredImage}
+                  alt={post.title}
+                  fill
+                  sizes="(max-width: 700px) 100vw, (max-width: 1000px) 50vw, 33vw"
+                />
+
+              </div>
+
+
+              {/* Blog Information */}
+
+              <div className="blog-card-body">
+
+                <div className="blog-card-meta">
+
+                  <span>
+                    {post.category}
+                  </span>
+
+                  <span>
+                    {post.readTime}
+                  </span>
+
+                </div>
+
+
+                <h3>
+                  {post.title}
+                </h3>
+
+
+                <p>
+                  {post.excerpt}
+                </p>
+
+
+                <span className="blog-card-link">
+                  Read story →
+                </span>
+
+              </div>
+
+            </article>
+
+          </Link>
+
+        ))}
+
+      </div>
+
     </section>
     <section id="method" className="method"><div className="eyebrow"><span /> How we choose</div><h2>More than a<br /><em>good review.</em></h2><p>We look for a strong point of view, consistent cooking, real hospitality, and the kind of meal you find yourself planning around. Ratings shown are Google ratings and should be checked before you go.</p><a href="#top">Back to top ↑</a></section>
     <footer><a className="brand" href="#top"><span>●</span> SEESAW COLUMBUS</a><p><a href="/about">About</a> · <a href="/contact">Contact</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/disclaimer">Disclaimer</a></p><p>© 2026</p></footer>
