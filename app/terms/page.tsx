@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { InfoPage } from "../info-page";
+
+export const metadata: Metadata = { title: "Terms of Use", description: "Terms of use for the Seesaw Columbus restaurant guide." };
+export default function TermsPage() { return <InfoPage eyebrow="Last updated: August 2026" title="Terms of use"><p>By using Seesaw Columbus, you agree to use this restaurant guide for personal, non-commercial informational purposes.</p><h2>Editorial content</h2><p>All restaurant selections, descriptions, and rankings reflect Seesaw Columbus’s editorial perspective. They are not endorsements, guarantees, or paid recommendations unless explicitly identified as such.</p><h2>Use of the site</h2><p>You may not copy, republish, scrape, or commercially exploit the site’s written content or design without written permission. Restaurant names and third-party trademarks belong to their respective owners.</p><h2>Changes</h2><p>We may update the guide and these terms as the site evolves. Continued use of the site after changes means you accept the revised terms.</p></InfoPage>; }

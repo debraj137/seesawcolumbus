@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { InfoPage } from "../info-page";
+
+export const metadata: Metadata = { title: "About Seesaw Columbus", description: "How Seesaw Columbus chooses the restaurants in its guide." };
+export default function AboutPage() { return <InfoPage eyebrow="About the guide" title="Good meals, well chosen."><p>Seesaw Columbus is an independent guide to the restaurants that make Columbus worth eating your way through. We focus on places with a clear point of view, consistently strong cooking, warm hospitality, and the kind of meal people plan around.</p><h2>How we choose</h2><p>Our list brings together destination dining rooms, neighborhood favorites, late-night rituals, and small local businesses. We consider food, service, atmosphere, value, and the restaurant’s place in Columbus’s dining culture.</p><p>We do not sell rankings. A spot on the guide is editorial—not paid placement—and the order is an invitation to explore, not a universal verdict.</p></InfoPage>; }

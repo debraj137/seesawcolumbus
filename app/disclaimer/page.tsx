@@ -1,0 +1,5 @@
+import type { Metadata } from "next";
+import { InfoPage } from "../info-page";
+
+export const metadata: Metadata = { title: "Restaurant Information Disclaimer", description: "Important information about Seesaw Columbus restaurant details, ratings, menus, and hours." };
+export default function DisclaimerPage() { return <InfoPage eyebrow="Before you go" title="Restaurant information disclaimer"><p>Restaurant hours, menus, prices, availability, and Google ratings can change frequently. Seesaw Columbus provides this information as a starting point, not as a guarantee.</p><h2>Verify details directly</h2><p>Please confirm hours, reservations, dietary accommodations, menu items, prices, and accessibility directly with the restaurant before visiting. Google ratings and review counts are shown for context and are not controlled by Seesaw Columbus.</p><h2>No affiliation</h2><p>Unless stated otherwise, Seesaw Columbus is not affiliated with, sponsored by, or endorsed by the restaurants, Google, or any linked third-party service.</p></InfoPage>; }
