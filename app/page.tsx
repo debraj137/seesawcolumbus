@@ -87,11 +87,9 @@ export default function Home() {
           </div>
 
           <h2>
-            Stories worth
-            <br />
+            Stories worth{" "}
             <em>saving a table for.</em>
           </h2>
-
         </div>
 
         <p>
