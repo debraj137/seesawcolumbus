@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { restaurantDetails } from "./restaurants";
+import { SanityLive } from "@/sanity/lib/live";
 
 const restaurantCount = restaurantDetails.length;
 
@@ -16,5 +17,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = { themeColor: "#121212", colorScheme: "dark" };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  return <html lang="en"><body>{children}</body></html>;
+  return <html lang="en"><body>{children}
+    <SanityLive />
+  </body></html>;
 }
